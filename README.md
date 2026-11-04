@@ -10,20 +10,13 @@ This repository contains the **downstream multi-agent curation component contrib
 
 The released pipeline covers relation extraction, verification, and normalization. It accepts sentence CSV files selected by the upstream classifier; experimental code and artifacts remain outside the release.
 
-## Pipeline
+## Pipeline overview
 
-```mermaid
-flowchart TD
-    A[Upstream evidence sentences + PMID metadata] --> B[Controller: metadata and dictionary hints]
-    B --> C[Zero-shot Extraction Agent]
-    C --> D[Deduplication and risk gate]
-    D -->|High risk| E[Verification Agent]
-    D -->|Low risk| F[Local ontology and gene mapping]
-    E --> F
-    F --> G[Cell Normalization Agent]
-    G --> H[Gene Normalization Agent]
-    H --> I[Evidence-linked CSV and relational database]
-```
+![CMAgent pipeline overview showing upstream sentence selection and downstream multi-agent relation curation](docs/figures/giw_overview.png)
+
+[View the original overview (PDF)](docs/figures/giw_overview.pdf)
+
+The figure shows the full collaborative CMAgent workflow, from literature processing and sentence classification to multi-agent relation curation and database storage. This repository implements the downstream multi-agent component: the green section covering relation extraction, selective verification, and cell and gene normalization. The upstream label-refinement and sentence-classification stages and the web portal are outside this release.
 
 - **Controller:** prepares work items, coordinates stages, checkpoints decisions, and retries incomplete work.
 - **Extraction Agent:** extracts specific/broad cell mentions, marker mentions, polarity, confidence, and supporting spans using structured responses.
@@ -160,7 +153,7 @@ src/orchestration/    Controller, work items, deduplication, persistence
 src/pipelines/        Supported entry point and agent links
 webapp/backend/       Minimal relational database models and schema support
 data/mapping/         Runtime alias configuration, not evaluation labels
-docs/                Integration/resource documentation and the two research PDFs
+docs/                Integration/resource documentation, overview, and research PDFs
 ```
 
 Raw literature, reference-cache snapshots, credentials, model weights, input corpora, databases, and generated run artifacts are not bundled. Prepare the external resources before a full run. Model-backed results depend on the supplied inputs, reference resources, and model responses; attaching the papers is not a claim that this release reproduces every reported experiment.
