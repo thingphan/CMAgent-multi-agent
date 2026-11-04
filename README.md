@@ -4,11 +4,11 @@ Controller-guided extraction, verification, and normalization of **cell type–m
 
 ## Scope and contribution
 
-This repository contains the **downstream multi-agent curation component contributed by Myeongkwan Kim (김명관)** to the collaborative CMAgent project. It starts with evidence sentences supplied by an upstream system.
+This repository contains the **downstream multi-agent curation component contributed by Myeongkwan Kim** to the collaborative CMAgent project. It starts with evidence sentences supplied by an upstream system.
 
 **The preceding sentence classifier is outside this release.** Literature retrieval/ranking, classifier training and inference, label-refinement code, classifier weights, experimental scripts, ablations, evaluation datasets, and generated results are not included. The accompanying papers describe the broader collaborative system; their inclusion does not imply that all components or contributions are implemented in this repository.
 
-이 저장소는 CMAgent 공동 연구 중 **김명관이 기여한 multi-agent 기반 관계 추출·검증·정규화 파이프라인**을 공개합니다. 앞 단계의 classifier는 포함하지 않으며, 해당 단계에서 선별한 문장 CSV를 입력으로 받습니다. 실험 코드와 실험 산출물은 공개 범위에서 제외했습니다.
+The released pipeline covers relation extraction, verification, and normalization. It accepts sentence CSV files selected by the upstream classifier; experimental code and artifacts remain outside the release.
 
 ## Pipeline
 
@@ -148,7 +148,7 @@ The Docker image was built and exercised through Compose using synthetic inputs,
 | Submitted GIW 2026 long abstract | [GIW_2026_long_abstract.pdf](docs/publications/GIW_2026_long_abstract.pdf) |
 | GIW 2026 poster presentation | Planned; a poster file is not included in this release |
 
-**GIW 포스터 발표 예정입니다.** The long abstract describes *CMAgent: A Multi-Agent System for Automated Cell Type–Marker Curation from Literature*. The KCC paper describes *CMAgent: An LLM-Based Curation Agent for Cell Type–Marker Relationships in Single-Cell RNA-seq Annotation*. These documents cover the wider collaborative work and may describe stages or experiments beyond this code release.
+**A poster presentation at GIW 2026 is planned.** The long abstract describes *CMAgent: A Multi-Agent System for Automated Cell Type–Marker Curation from Literature*. The KCC paper describes *CMAgent: An LLM-Based Curation Agent for Cell Type–Marker Relationships in Single-Cell RNA-seq Annotation*. These documents cover the wider collaborative work and may describe stages or experiments beyond this code release.
 
 ## Repository layout
 
