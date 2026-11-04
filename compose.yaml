@@ -1,0 +1,23 @@
+services:
+  pipeline:
+    build: .
+    image: cmagent-multi-agent:local
+    user: "${CMAGENT_UID:-10001}:${CMAGENT_GID:-10001}"
+    environment:
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      DATABASE_URL: ${DATABASE_URL:-sqlite:////outputs/cell_marker.db}
+      CMAGENT_RESOURCES_DIR: /resources
+      CMAGENT_RUNS_DIR: /outputs/runs
+    volumes:
+      - ${CMAGENT_INPUT_DIR:-./inputs}:/inputs:ro
+      - ${CMAGENT_OUTPUT_DIR:-./outputs}:/outputs
+      - ${CMAGENT_RESOURCES_DIR:-./resources}:/resources:ro
+    command:
+      - --input
+      - /inputs/input_sentences.csv
+      - --metadata
+      - /inputs/pmid_metadata.csv
+      - --database-output
+      - /outputs/cell_marker_database.csv
+      - --run-name
+      - ${CMAGENT_RUN_NAME:-run}

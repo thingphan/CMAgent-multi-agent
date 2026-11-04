@@ -1,0 +1,13 @@
+{
+  "treg": ["regulatory t cell"],
+  "regulatory t cells (tregs)": ["regulatory t cell"],
+  "modc/dc": ["dendritic cell", "monocyte-derived dendritic cell"],
+  "dc": ["dendritic cell"],
+  "microglia": ["microglial cell"],
+  "t-cells": ["t cell"],
+  "b-cells": ["b cell"],
+  "pro-neutrophils": ["neutrophil"],
+  "pre-neutrophils": ["neutrophil"],
+  "epdcs": ["epicardial cell"],
+  "fibroblasts/myofibroblasts": ["fibroblast", "myofibroblast"]
+}

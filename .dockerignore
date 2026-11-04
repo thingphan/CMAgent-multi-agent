@@ -1,0 +1,11 @@
+**
+!requirements.txt
+!src/
+!src/**
+!webapp/
+!webapp/**
+!data/
+!data/mapping/
+!data/mapping/*.json
+**/__pycache__/
+**/*.py[cod]
