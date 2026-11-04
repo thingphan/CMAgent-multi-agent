@@ -2,6 +2,18 @@
 
 Controller-guided extraction, verification, and normalization of **cell type–marker relationships** from biomedical evidence sentences.
 
+## Research materials
+
+The Docker image was built and exercised through Compose using synthetic inputs, reference fixtures, and mocked model responses. Checks covered all four agents, risk-gated verification, CSV/SQLite persistence, checkpoint resumption without repeated model calls, and empty-relation handling. Live model quality and the upstream classifier were not evaluated as part of packaging this release.
+
+| Material | File / status |
+| --- | --- |
+| KCC 2026 paper | [KCC_2026_paper.pdf](docs/publications/KCC_2026_paper.pdf) |
+| Submitted GIW 2026 long abstract | [GIW_2026_long_abstract.pdf](docs/publications/GIW_2026_long_abstract.pdf) |
+| GIW 2026 poster presentation | Planned; a poster file is not included in this release |
+
+**A poster presentation at GIW 2026 is planned.** The long abstract describes *CMAgent: A Multi-Agent System for Automated Cell Type–Marker Curation from Literature*. The KCC paper describes *CMAgent: An LLM-Based Curation Agent for Cell Type–Marker Relationships in Single-Cell RNA-seq Annotation*. These documents cover the wider collaborative work and may describe stages or experiments beyond this code release.
+
 ## Scope and contribution
 
 This repository contains the **downstream multi-agent curation component contributed by Myeongkwan Kim** to the collaborative CMAgent project. It starts with evidence sentences supplied by an upstream system.
@@ -131,17 +143,6 @@ Local runs default to `results/full/runs/<run-name>/` and SQLite at `data/proces
 
 The canonical CSV stores rows with both CL and NCBI Gene IDs; relational ingestion additionally requires a species taxonomy ID. Unmapped candidates remain inspectable in run artifacts. A run with no extracted relations writes empty artifacts and returns without updating databases.
 
-## Research materials
-
-The Docker image was built and exercised through Compose using synthetic inputs, reference fixtures, and mocked model responses. Checks covered all four agents, risk-gated verification, CSV/SQLite persistence, checkpoint resumption without repeated model calls, and empty-relation handling. Live model quality and the upstream classifier were not evaluated as part of packaging this release.
-
-| Material | File / status |
-| --- | --- |
-| KCC 2026 paper | [KCC_2026_paper.pdf](docs/publications/KCC_2026_paper.pdf) |
-| Submitted GIW 2026 long abstract | [GIW_2026_long_abstract.pdf](docs/publications/GIW_2026_long_abstract.pdf) |
-| GIW 2026 poster presentation | Planned; a poster file is not included in this release |
-
-**A poster presentation at GIW 2026 is planned.** The long abstract describes *CMAgent: A Multi-Agent System for Automated Cell Type–Marker Curation from Literature*. The KCC paper describes *CMAgent: An LLM-Based Curation Agent for Cell Type–Marker Relationships in Single-Cell RNA-seq Annotation*. These documents cover the wider collaborative work and may describe stages or experiments beyond this code release.
 
 ## Repository layout
 
