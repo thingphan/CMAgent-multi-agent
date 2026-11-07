@@ -158,3 +158,7 @@ docs/                Integration/resource documentation, overview, and research 
 ```
 
 Raw literature, reference-cache snapshots, credentials, model weights, input corpora, databases, and generated run artifacts are not bundled. Prepare the external resources before a full run. Model-backed results depend on the supplied inputs, reference resources, and model responses; attaching the papers is not a claim that this release reproduces every reported experiment.
+
+
+## Authorship and reuse
+This is a research portfolio snapshot, not a packaged software release. It is shared for research visibility and discussion. Please contact the repository owner before reusing the code or reproducing institutional-access collection workflows.
