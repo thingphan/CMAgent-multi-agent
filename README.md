@@ -10,7 +10,7 @@ The Docker image was built and exercised through Compose using synthetic inputs,
 | --- | --- |
 | KCC 2026 paper | [KCC_2026_paper.pdf](docs/publications/KCC_2026_paper.pdf) |
 | Submitted GIW 2026 long abstract | [GIW_2026_long_abstract.pdf](docs/publications/GIW_2026_long_abstract.pdf) |
-| GIW 2026 poster presentation | [GIW_2026_poster.pdf](docs/publications/GIW_2026_poster.pdf) |
+| GIW 2026 poster presentation | [GIW_2026_poster.pdf](docs/publications/GIW_poster.pdf) |
 
 The long abstract describes *CMAgent: A Multi-Agent System for Automated Cell Type–Marker Curation from Literature*. The KCC paper describes *CMAgent: An LLM-Based Curation Agent for Cell Type–Marker Relationships in Single-Cell RNA-seq Annotation*. These documents cover the wider collaborative work and may describe stages or experiments beyond this code release.
 
